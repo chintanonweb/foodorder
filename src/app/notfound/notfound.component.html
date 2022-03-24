@@ -1,0 +1,8 @@
+<div class="container">
+    <div class="row align-items-center">
+        <div *ngIf="visible">
+            {{notFoundMessage}}
+            <a routerLink="{{resetLinkRoute}}" class="btn btn-danger rounded-pill p-2">{{resetLinkText}}</a>
+        </div>
+    </div>
+</div>

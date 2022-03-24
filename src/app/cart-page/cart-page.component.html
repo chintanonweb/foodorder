@@ -1,0 +1,41 @@
+<app-notfound [visible]="!cart || cart.items.length <0" notFoundMessage="Items Not Found" resetLinkText="Go to HomePage!">
+
+</app-notfound>
+<div *ngIf="cart && cart.items.length >0" class="container">
+    <div class="row mt-3">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="row p-3" *ngFor="let cartItem of cart.items">
+                    <div class="col-md-3">
+                        <img class="img-fluid" [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name">
+                    </div>
+                    <div class="col-md-6">
+                        <h5>{{cartItem.food.name}}</h5>
+                        <h5>{{cartItem.price}}</h5>
+                    </div>
+                    <div class="col-md-3">
+                        <select #quantitySelect (change)="changeQuantity(cartItem,quantitySelect.value)"
+                            class="form-select" aria-label="Default select example">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                        </select>
+                        <button class="btn btn-danger mt-3" (click)="removeFromCart(cartItem)">Remove</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="card p-3 shadow">
+                <h3> Total Count : {{cart.items.length}}</h3>
+                <h3> Total Price : {{cart.totalPrice}}</h3>
+                <button class="btn btn-danger mt-3" routerLink="/checkout">Proceed to Check Out</button>
+
+            </div>
+        </div>
+    </div>
+</div>

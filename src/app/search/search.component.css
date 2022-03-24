@@ -1,0 +1,18 @@
+.search-rounded {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  border-radius: 50px 0 0 50px !important;
+}
+.form-control :focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: transparent;
+
+}
+
+.searchbtn {
+  border-left: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0 50px 50px 0 !important;
+}

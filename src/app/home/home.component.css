@@ -1,0 +1,51 @@
+/* Hovereffect CSS Start */
+.hovereffect {
+	width: 100%;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+	position: relative;
+	cursor: default;
+}
+
+.hovereffect img {
+	-webkit-transition: all 0.9s ease-in-out;
+	transition: all 0.9s ease-in-out;
+	display: block;
+	position: relative;
+	-webkit-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+}
+
+.hovereffect:hover img {
+	-webkit-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
+    opacity: 0.9;
+}
+
+/* Hovereffect CSS End */
+.hovershadow {
+	overflow: hidden;
+	cursor: default;
+	box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+.hovershadow:hover{
+	-webkit-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+.wishlist {
+	font-size: 25px;
+    height: 30px;
+    width: 30px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}

@@ -1,0 +1,65 @@
+<app-notfound [visible]="!food" notFoundMessage="Product Not Found" resetLinkText="Go to HomePage!">
+
+<div *ngIf="food" class="container card mt-3 shadow">
+    <div class="row p-3">
+        <div class="col-md-6">
+            <img class="img-fluid rounded" [src]="food.imageUrl" [alt]="food.name">
+        </div>
+        <div class="col-md-6 align-items-center">
+            <div class="d-flex align-items-center justify-content-between">
+                <h3 class="card-title fw-bold mb-0">{{food.name}}</h3>
+                <span class="wishlist">
+                    <span class="{{food.favorite?'text-danger':'text-dark'}}">♥</span>
+                </span>
+            </div>
+            <star-rating [value]="food.stars" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" size="24px"
+                [readonly]="false"></star-rating>
+            <div class="d-flex align-items-center justify-content-between">
+                <h4><span class="badge bg-danger fw-bold mb-0">{{food.price | currency:"INR"}}</span></h4>
+                <span class="">🕑 {{food.cookTime}} Minutes</span>
+            </div>
+            <span class="badge rounded-pill bg-warning text-dark me-1" *ngFor="let tags of food.tags">{{tags}}</span>
+            <div class="accordion mt-3" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                            aria-controls="panelsStayOpen-collapseOne">
+                            Product info
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                        aria-labelledby="panelsStayOpen-headingOne">
+                        <div class="accordion-body">
+                            <h6 class="fw-bold mb-2">Ingredients:</h6>
+                            <p class="fs-sm">Salami, Olives, Bell pepper, Mushrooms, Mozzarella, Parmesan</p>
+                            <h6 class="fw-bold mb-2">Allergies</h6>
+                            <p class="fs-sm">Gluten, Dairy</p>
+                            <h6 class="fw-bold mb-2">Calories</h6>
+                            <p class="fs-sm mb-0">811</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseTwo">
+                            Shipping options
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingTwo">
+                        <div class="accordion-body">
+                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until
+                            the collapse plugin adds the appropriate classes that we use to style each element. These
+                            <code>.accordion-body</code>, though the transition does limit overflow.
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <button class="btn btn-danger w-100 mt-2 shadow rounded-pill" type="button" (click)="addToCart()">Add to Cart</button>
+        </div>
+    </div>
+</div>

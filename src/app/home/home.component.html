@@ -1,0 +1,32 @@
+<div class="container">
+    <app-search></app-search>
+    <app-tags></app-tags>
+    <app-notfound [visible]="!foods || foods.length<=0" notFoundMessage="Nothing Found" resetLinkText="Reset Reseach">
+    <div class="row">
+        <div class="col-md-4 mt-3" *ngFor="let food of foods">
+            <div class="card h-100 hovereffect">
+                <a routerLink="/food/{{food.id}}" class="text-decoration-none">
+                    <img src="{{food.imageUrl}}" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h5 class="card-title fw-bold mb-0">{{food.name}}</h5>
+                            <span class="wishlist">
+                                <span class="{{food.favorite?'text-danger':'text-dark'}}">♥</span>
+                            </span>
+                        </div>
+                        <star-rating [value]="food.stars" [totalstars]="5" checkedcolor="red" uncheckedcolor="black"
+                            size="24px" [readonly]="false" class="text-center"></star-rating>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h5><span class="badge bg-danger fw-bold mb-0">{{food.price | currency:"INR"}}</span></h5>
+                            <span class="">🕑 {{food.cookTime}}</span>
+                        </div>
+                        <span class="badge rounded-pill bg-warning text-dark me-1"
+                            *ngFor="let tags of food.tags">{{tags}}</span>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
