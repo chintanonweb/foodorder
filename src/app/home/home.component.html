@@ -1,7 +1,7 @@
 <div class="container">
     <app-search></app-search>
     <app-tags></app-tags>
-    <app-notfound [visible]="!foods || foods.length<=0" notFoundMessage="Nothing Found" resetLinkText="Reset Reseach">
+    <!-- <app-notfound [visible]="!foods || foods.length<=0" notFoundMessage="Nothing Found" resetLinkText="Reset Reseach"> -->
     <div class="row">
         <div class="col-md-4 mt-3" *ngFor="let food of foods">
             <div class="card h-100 hovereffect">

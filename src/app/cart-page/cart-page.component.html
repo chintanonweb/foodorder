@@ -1,6 +1,5 @@
-<app-notfound [visible]="!cart || cart.items.length <0" notFoundMessage="Items Not Found" resetLinkText="Go to HomePage!">
-
-</app-notfound>
+<!-- <app-notfound [visible]="!cart || cart.items.length <0" notFoundMessage="Items Not Found" resetLinkText="Go to HomePage!">
+</app-notfound> -->
 <div *ngIf="cart && cart.items.length >0" class="container">
     <div class="row mt-3">
         <div class="col-md-8">
@@ -11,7 +10,12 @@
                     </div>
                     <div class="col-md-6">
                         <h5>{{cartItem.food.name}}</h5>
-                        <h5>{{cartItem.price}}</h5>
+                        <star-rating [value]="cartItem.food.stars" [totalstars]="5" checkedcolor="red"
+                            uncheckedcolor="black" size="24px" [readonly]="false"></star-rating>
+                        <h5><span class="badge bg-danger fw-bold mb-0 mt-2">₹
+                                {{cartItem.price}}</span></h5>
+
+
                     </div>
                     <div class="col-md-3">
                         <select #quantitySelect (change)="changeQuantity(cartItem,quantitySelect.value)"

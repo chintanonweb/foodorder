@@ -1,0 +1,28 @@
+.contact-title{
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
+.btn-grad {
+    background-image: linear-gradient(to right, #FF512F 0%, #DD2476 51%, #FF512F 100%)
+}
+
+.btn-grad {
+    padding: 10px 25px;
+    vertical-align: middle;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 30px;
+}
+
+.btn-grad:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
