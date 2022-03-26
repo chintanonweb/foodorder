@@ -1,6 +1,6 @@
 import { isNgTemplate } from '@angular/compiler';
 import { Injectable } from '@angular/core';
-import { Cart } from '../shared/model/Cart';
+import { Cart } from '../shared/model/cart';
 import { CartItem } from '../shared/model/cartItem';
 import { Foods } from '../shared/model/food';
 
